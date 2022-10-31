@@ -166,4 +166,8 @@
       QueueName seed-journald
       NumberOfBatchIDs 5
 {{ end }}
+{{ if .Values.fluentBitConfigurationsOverwrites.cloudWatchOutput }}
+
+{{ .Values.fluentBitConfigurationsOverwrites.cloudWatchOutput | indent 2 }}
+{{ end }}
 {{- end }}

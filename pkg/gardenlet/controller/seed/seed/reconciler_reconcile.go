@@ -614,6 +614,12 @@ func (r *Reconciler) runReconcileSeedFlow(ctx context.Context, log logr.Logger, 
 			if fbConfig.OutputSection != nil {
 				fluentBitConfigurationsOverwrites["output"] = *fbConfig.OutputSection
 			}
+			if fbConfig.CloudWatchOutput != nil {
+				fluentBitConfigurationsOverwrites["cloudWatchOutput"] = *fbConfig.CloudWatchOutput
+			}
+			if fbConfig.AWSCredentials != nil {
+				fluentBitConfigurationsOverwrites["awsCredentials"] = *fbConfig.AWSCredentials
+			}
 		}
 	} else {
 		if err := common.DeleteSeedLoggingStack(ctx, seedClient); err != nil {

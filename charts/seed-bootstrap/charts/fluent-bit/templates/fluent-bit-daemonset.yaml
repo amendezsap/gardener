@@ -69,6 +69,11 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: spec.nodeName
+{{ if .Values.fluentBitConfigurationsOverwrites.awsCredentials }}
+        envFrom:
+          - secretRef:
+              name: fluent-bit-aws-credentials
+{{ end }}
         resources:
           limits:
             memory: 400Mi

@@ -400,6 +400,11 @@ type FluentBit struct {
 	// OutputSection defines [OUTPUT] configuration for the fluent-bit.
 	// If it is nil, fluent-bit uses default output configuration.
 	OutputSection *string
+	// Cloudwatch Output
+	CloudWatchOutput *string
+	// Cloudwatch Credentials
+	AWSCredentials *string
+	NetworkPolicy  *FluentBitNetworkPolicy
 	// NetworkPolicy defines settings for the fluent-bit NetworkPolicy.
 	NetworkPolicy *FluentBitNetworkPolicy
 }
