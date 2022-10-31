@@ -404,7 +404,6 @@ type FluentBit struct {
 	CloudWatchOutput *string
 	// Cloudwatch Credentials
 	AWSCredentials *string
-	NetworkPolicy  *FluentBitNetworkPolicy
 	// NetworkPolicy defines settings for the fluent-bit NetworkPolicy.
 	NetworkPolicy *FluentBitNetworkPolicy
 }
