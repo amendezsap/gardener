@@ -135,6 +135,10 @@ func (g *gardenerDashboard) deployment(
 										},
 									},
 								},
+								{
+									Name:  "NODE_TLS_REJECT_UNAUTHORIZED",
+									Value: "0",
+								},
 							},
 							Resources: corev1.ResourceRequirements{
 								Requests: map[corev1.ResourceName]resource.Quantity{

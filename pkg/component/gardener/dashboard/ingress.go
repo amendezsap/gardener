@@ -55,7 +55,7 @@ func (g *gardenerDashboard) ingress(ctx context.Context) (*networkingv1.Ingress,
 		Spec: networkingv1.IngressSpec{
 			IngressClassName: ptr.To(v1beta1constants.SeedNginxIngressClass),
 			TLS: []networkingv1.IngressTLS{{
-				SecretName: tlsSecretName,
+				SecretName: "tls", // Override tlsSecretName
 				Hosts:      g.ingressHosts(),
 			}},
 		},
