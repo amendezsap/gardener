@@ -121,7 +121,7 @@ func (g *gardenerDashboard) configMap(ctx context.Context) (*corev1.ConfigMap, e
 			SessionLifetime:    int64(ptr.Deref(g.values.OIDC.DashboardOIDC.SessionLifetime, metav1.Duration{Duration: 12 * time.Hour}).Seconds()),
 			RedirectURIs:       redirectURIs,
 			Scope:              strings.Join(append([]string{"openid", "email"}, g.values.OIDC.AdditionalScopes...), " "),
-			RejectUnauthorized: true,
+			RejectUnauthorized: false,
 			Public: config.OIDCPublic{
 				ClientID: g.values.OIDC.ClientIDPublic,
 				UsePKCE:  true,
